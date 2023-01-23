@@ -18,7 +18,11 @@ class num_sum:
             num1 = item
             num2 = sum - num1
             ind1 = nums.index(num1)
-            ind2 = nums.index(num2)
+            try:
+                ind2 = nums.index(num2)
+            except:
+                print("no solution possible in this array")
+                break
             print(ind1)
             print(ind2)
 
