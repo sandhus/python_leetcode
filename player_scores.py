@@ -30,7 +30,7 @@ def rank_up(k, n, scores):
     ans = 0
     for i in ranks:
         if i <= k:
-            ans=ans+1
+            ans += 1
     return ans
 
 def scores_to_rank(sc):
@@ -48,7 +48,6 @@ def scores_to_rank(sc):
         else:
             ranks[i] = i+1
             #print(ranks)
-
 
     return ranks
 
