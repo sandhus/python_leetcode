@@ -25,31 +25,17 @@ Output: true
 
 def is_valid(s):
 
-    valid_paren = [0, 0, 0]
+    mapping = {")": "(", "]": "[", "}": "{"}
+    last_brk = []
+
     for i in s:
-        print(valid_paren)
-        if i == "(":
-            valid_paren[0] += 1
-        if i == ")":
-            valid_paren[0] -= 1
-        if i == "{":
-            valid_paren[1] += 1
-        if i == "}":
-            valid_paren[1] -= 1
-        if i == "[":
-            valid_paren[2] += 1
-        if i == "]":
-            valid_paren[2] -= 1
-
-    if not (valid_paren[0] >= 0 and valid_paren[1] >= 0 and valid_paren[2] >= 0):
-        print("invalid2")
-        return False
-
-    if valid_paren != [0, 0, 0]:
-        print(valid_paren)
-        print("invalid1")
-        return False
+        if i in mapping.values():
+            last_brk.append(i)
+        elif i in mapping.keys():
+            if not last_brk or mapping[i] != last_brk.pop():
+                print("invalid")
+                return False
     print("valid")
     return True
 
-is_valid("()[]{}")
+is_valid("()[()][]{}")
