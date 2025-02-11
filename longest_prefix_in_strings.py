@@ -29,4 +29,4 @@ def longest_prefix(strs):
                 return strs[0][:i]
     return strs[0]
 
-print(longest_prefix(["flower","flow","flight"]))
+print(longest_prefix(["dog","racecar","car"]))
